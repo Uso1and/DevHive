@@ -3,34 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevHive</title>
+    <title>DevHive - Регистрация</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/static/css/auth.css">
+    <link rel="stylesheet" href="/static/css/signup.css">
 </head>
 <body>
-<div class="auth-container">
-    <h1>Регистрация в DevHive</h1>
-    <form id="signupForm" method="POST" action="/signup">
-        <div class="form-group">
-            <label for="username">Имя пользователя:</label>
-            <input type="text" id="username" name="username" required>
+    <div class="login-wrapper">
+        <div class="login-left">
+            <div class="particles-left" id="particles-left"></div>
+            
+            <div class="brand-hero">
+                <h1>Присоединяйтесь к сообществу разработчиков</h1>
+                <p>DevHive - это платформа, где разработчики со всего мира обмениваются знаниями, находят единомышленников и создают инновационные проекты вместе.</p>
+                
+                <div class="illustration">
+                    <div class="illustration-content">
+                        <div class="code-block">
+                            <span class="code-comment">// Начните свой путь в DevHive</span><br>
+                            <span class="code-function">function</span> <span style="color: #d2a8ff">joinCommunity</span>() {<br>
+                            &nbsp;&nbsp;<span class="code-function">const</span> <span class="code-var">dev</span> = <span class="code-function">new</span> <span style="color: #ffa657">Developer</span>({<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;username: <span class="code-string">'ваш_никнейм'</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;email: <span class="code-string">'ваш@email.com'</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;skills: [<span class="code-string">'JavaScript'</span>, <span class="code-string">'Python'</span>, <span class="code-string">'React'</span>],<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;isAwesome: <span style="color: #7ee787">true</span><br>
+                            &nbsp;&nbsp;});<br><br>
+                            
+                            &nbsp;&nbsp;<span class="code-var">dev</span>.<span style="color: #d2a8ff">register</span>();<br>
+                            &nbsp;&nbsp;<span class="code-var">dev</span>.<span style="color: #d2a8ff">connect</span>();<br>
+                            &nbsp;&nbsp;<span class="code-var">dev</span>.<span style="color: #d2a8ff">create</span>();<br>
+                            }
+                        </div>
+                    </div>
+                </div>
+                
+                <ul class="features-list">
+                    <li>
+                        <i class="fas fa-code-branch"></i>
+                        <div>
+                            <strong>Совместная работа</strong>
+                            <p>Находите партнеров для своих проектов или присоединяйтесь к существующим</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-comments"></i>
+                        <div>
+                            <strong>Обсуждение технологий</strong>
+                            <p>Делитесь знаниями и получайте помощь от опытных разработчиков</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-rocket"></i>
+                        <div>
+                            <strong>Развитие карьеры</strong>
+                            <p>Находите новые возможности для профессионального роста</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        
+        <div class="login-right">
+            <div class="auth-container">
+                <div class="brand-header">
+                    <i class="fas fa-code"></i>
+                    <h1>Dev<span>Hive</span></h1>
+                    <p>Создайте новый аккаунт</p>
+                </div>
+                
+                <form id="signupForm" method="POST" action="/signup">
+                    <div class="form-group">
+                        <label for="username">
+                            <i class="fas fa-user"></i>
+                        </label>
+                        <input type="text" id="username" name="username" placeholder="Имя пользователя" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">
+                            <i class="fas fa-lock"></i>
+                        </label>
+                        <input type="password" id="password" name="password" placeholder="Пароль" required>
+                        <i class="fas fa-eye toggle-password" toggle-target="password"></i>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm_password">
+                            <i class="fas fa-lock"></i>
+                        </label>
+                        <input type="password" id="confirm_password" name="confirm_password" placeholder="Подтвердите пароль" required>
+                        <i class="fas fa-eye toggle-password" toggle-target="confirm_password"></i>
+                    </div>
+                    
+                    <button type="submit" class="glow-btn">
+                        <i class="fas fa-user-plus"></i>
+                        Зарегистрироваться
+                    </button>
+                </form>
+                
+                <p class="signup-link">Уже есть аккаунт? <a href="/login">Войти</a></p>
+                
+                <div class="tech-logos">
+                    <i class="fab fa-js"></i>
+                    <i class="fab fa-python"></i>
+                    <i class="fab fa-java"></i>
+                    <i class="fab fa-html5"></i>
+                    <i class="fab fa-css3-alt"></i>
+                    <i class="fab fa-react"></i>
+                    <i class="fab fa-node-js"></i>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div class="form-group">
-            <label for="confirm_password">Подтвердите пароль:</label>
-            <input type="password" id="confirm_password" name="confirm_password" required>
-        </div>
-        <button type="submit">Зарегистрироваться</button>
-    </form>
-    <p>Уже есть аккаунт? <a href="/login">Войдите</a></p>
+    </div>
+    
     <div id="errorMessage" class="error-message"></div>
-</div>
-<script src="/static/js/auth/signup.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/static/js/auth/sg.js"></script>
 </body>
 </html>
