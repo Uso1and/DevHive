@@ -7,6 +7,10 @@ import (
 )
 
 func IndexPageHandler(c *gin.Context) {
+	c.HTML(http.StatusOK, "index.html", nil)
+}
+
+func LoginPageHandler(c *gin.Context) {
 	c.HTML(http.StatusOK, "login.html", nil)
 }
 

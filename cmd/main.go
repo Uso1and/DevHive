@@ -37,6 +37,7 @@ func main() {
 
 	// Public routes
 	r.GET("/", handlers.IndexPageHandler)
+	r.GET("/login", handlers.LoginPageHandler)
 	r.GET("/signup", handlers.SignUpPageHandler)
 	r.POST("/signup", userHandler.SingnUpHandler)
 	r.POST("/login", userHandler.LoginHandler)
