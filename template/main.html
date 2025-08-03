@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>ГЛАВНАЯ СТРАНИЦА</h1>
+        <div id="mainInfo">
+            <p><strong>ID:</strong> {{.userID}}</p>
+            <p><strong>Имя пользователя:</strong> {{.username}}</p>
+            <p><strong>Сообщение:</strong> {{.message}}</p>
+        </div>
+        <div class="nav-links">
+            <a href="#" id="profileLink">Профиль</a>
+            <button id="logoutBtn">Выйти</button>
+        </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
