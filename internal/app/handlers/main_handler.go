@@ -34,3 +34,7 @@ func ProfilePageHandler(c *gin.Context) {
 		"message":  "профиль",
 	})
 }
+
+func SearchfrPageHandler(c *gin.Context) {
+	c.HTML(http.StatusOK, "searchfr.html", nil)
+}

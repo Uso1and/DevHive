@@ -27,8 +27,10 @@ func main() {
 	}()
 
 	userRepo := repo.NewUserRepo(database.DB)
-	userHandler := handlers.NewUserHandler(userRepo, cfg)
+	discRepo := repo.NewDiscRepo(database.DB)
 
+	userHandler := handlers.NewUserHandler(userRepo, cfg)
+	discHandler := handlers.NewDiscHandler(discRepo, userRepo)
 	r := gin.Default()
 
 	r.LoadHTMLGlob("template/*")
@@ -58,6 +60,9 @@ func main() {
 	{
 		protected.GET("/main", handlers.MainPage)
 		protected.GET("/profile", handlers.ProfilePageHandler)
+		protected.GET("/searchfr", handlers.SearchfrPageHandler)
+
+		protected.POST("/discussions", discHandler.CreareDisc)
 	}
 
 	r.Run(":8080")
